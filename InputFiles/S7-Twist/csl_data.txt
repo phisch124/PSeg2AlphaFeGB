@@ -1,0 +1,51 @@
+# ------------------------------------------------------------------------------
+# Data for boundary with axis [1 1 1], m=1 n=-5
+# Sigma=7, Theta=38.21
+# Asymmetric boundary specified with h,k,l: 1,0,0
+# Tilt component: 0.0 Twist component: 38.2132107017
+# ------------------------------------------------------------------------------
+# Orthogonal CSL cell details:
+            84.0 atoms in cell
+   1.73205080757 xdim
+   3.74165738677 ydim
+   6.48074069841 zdim
+# CSL basis vectors for black crystal
+         1.0         1.0         1.0
+        -1.0         3.0        -2.0
+         5.0        -1.0        -4.0
+# CSL basis vectors for white crystal
+         1.0         1.0         1.0
+         1.0         2.0        -3.0
+         5.0        -4.0        -1.0
+# CSL basis vectors in final orientation
+           1.73205080757                     0.0                     0.0
+                     0.0           3.74165738677                     0.0
+         8.881784197e-16                     0.0           6.48074069841
+# ------------------------------------------------------------------------------
+# Minimal (possibly!) CSL cell details:
+         7.0 cubic cells in cell
+# Minimal CSL basis vectors for black crystal
+         1.0         1.0         1.0
+         0.0         1.0        -2.0
+        -1.0         2.0         0.0
+# Minimal CSL basis vectors for white crystal
+         1.0         1.0         1.0
+         1.0         0.0        -2.0
+         0.0         2.0        -1.0
+# Minimal CSL basis vectors in final orientation
+           1.73205080757                     0.0                     0.0
+          -0.57735026919           1.87082869339           1.08012344973
+           0.57735026919           1.87082869339          -1.08012344973
+# ------------------------------------------------------------------------------
+# Rotation matrix for black crystal into common orientation:
+  0.963274121682  0.207345175664 -0.170619297346
+ -0.170619297346  0.963274121682  0.207345175664
+  0.207345175664 -0.170619297346  0.963274121682
+# Rotation matrix for white crystal into common orientation:
+  0.963274121682 -0.170619297346  0.207345175664
+  0.207345175664  0.963274121682 -0.170619297346
+ -0.170619297346  0.207345175664  0.963274121682
+# Rotation matrix from common orientation into final supercell orientation:
+           0.57735026919           0.57735026919           0.57735026919
+                     0.0          0.707106781187         -0.707106781187
+          0.816496580928         -0.408248290464         -0.408248290464

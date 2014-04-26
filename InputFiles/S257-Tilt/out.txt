@@ -1,0 +1,21 @@
+
+-----------------------------------------------------------
+           Cubic grain boundary file creator
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+    Generating boundary with normal on x axis
+    Total supecell is 2 by 10 by 1 repeats
+    Boundary divides 1 black and 1 white repeats
+    Found 4 and 4 atoms to remove from minimal black and white cells
+    Of 10280 atoms....
+              .....writing 10200 to file
+
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+     File conversion utility: lammps input -> cfg
+-----------------------------------------------------------
+-----------------------------------------------------------
+
