@@ -1,0 +1,8 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+### Request the SMP pe and number of cores
+
+#$ -pe smp.pe 12
+mpirun -np $NSLOTS lmp_linux < in.CascName

@@ -1,0 +1,14 @@
+# Initilisation
+units metal
+dimension 3
+boundary f f f
+
+pair_style eam/fs
+atom_style atomic
+atom_modify map array
+
+# Atom Definition
+read_data lmp_smallcell.txt
+
+# Settings
+pair_coeff * * Fe-P.eam.fs Fe P

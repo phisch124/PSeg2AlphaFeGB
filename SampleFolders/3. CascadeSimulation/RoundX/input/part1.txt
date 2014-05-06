@@ -1,0 +1,10 @@
+echo both
+
+atom_modify map array
+
+units metal
+boundary  p p p
+atom_style atomic
+
+# Atom Definition
+read_data lammps_sc.txt

@@ -1,0 +1,25 @@
+thermo 50
+thermo_style custom step ke pe etotal
+dump_modify 3 element Fe P
+timestep 0.000001 #good ts
+
+run 50000
+
+timestep 0.00001
+dump_modify 3 every 200
+run 10000
+
+dump_modify 3 every 1000
+
+run 40000
+
+timestep 0.0001
+
+dump_modify 3 every 5000
+
+run 100000
+
+
+timestep 0.0005
+
+run 50000

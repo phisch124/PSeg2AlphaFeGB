@@ -1,0 +1,9 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+### Request the SMP pe and number of cores
+
+##program=/mnt/iusers01/cr01/mcjsscr7/Software/Lammps/lammps-30Sep13/src/lmp_csf
+
+#$ -pe smp.pe 12

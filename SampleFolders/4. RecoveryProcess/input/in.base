@@ -1,0 +1,16 @@
+# Initilisation
+units metal
+dimension 3
+boundary p p p
+
+pair_style eam/fs
+atom_style atomic
+atom_modify map array
+
+# Atom Definition
+read_data lammps_in.txt
+
+# Settings
+pair_coeff * * Fe-P.eam.fs Fe P
+
+

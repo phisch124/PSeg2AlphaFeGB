@@ -1,0 +1,21 @@
+pair_style hybrid eam/fs eam/fs
+pair_coeff * * eam/fs 1 Fe-P.eam.fs Fe P
+pair_coeff * * eam/fs 2 Fe_2.eam.fs Fe NULL
+
+fix 1 all nve
+
+group PKA region rPKA
+
+minimize 1.0e-4 1.0e-6 100 1000
+
+reset_timestep 0
+
+compute kine1 all ke/atom
+compute pote1 all pe/atom
+variable keat atom c_kine1
+variable peat atom c_pote1
+
+variable cokp atom ln((v_peat+4.12)^2*(v_keat+0.961))
+variable cokp1 atom ln((v_peat+4.12)^2*(v_keat+1))
+
+#PKA velocity
