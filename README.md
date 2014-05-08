@@ -78,7 +78,9 @@ It takes an amount of sc_par x sc_par GB files as input.
 - dump/dump*.txt; 4 prepopulated dump files if 2x2 supercell, 16 if 4x4
 
 |								|					|								|
+
 |		csl_black		|		GB 		|		csl_white 	|
+
 |								|		4x4		|								|
 
 ----------------------------------------------------------------------------------------------
@@ -122,6 +124,7 @@ _ S41A_CMC.qsub
 ----------------------------------------------------------------------------------------------
 
 5. DataAnalysis
+
 Running the bash scripts, the input file are analysed and a file containing
 'Name mean standard_deviation m3 m4 skewness kurtosis'
 of the grain boundaries using the x-coordinate of the P atoms will be created.
