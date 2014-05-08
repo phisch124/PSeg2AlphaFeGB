@@ -23,20 +23,115 @@ Input: Files which are simply copied from the bash script into the csf folders. 
 
 ----------------------------------------------------------------------------------------------
 
-1. GBPopulation
+Before starting:
+
+
+1. Download Python - https://www.python.org/downloads/
+Python 2 has been used during the project.
+
+2. Build lammps - http://lammps.sandia.gov/download.html
+
+If there is any problem, try to google it first.
+
+For the visualisation
+
+Atomeye - http://li.mit.edu/Archive/Graphics/A/#download
+
+Gnuplot - http://www.gnuplot.info
+
+
+It is very handy to have access to a computer cluster and not to have to run the simulations locally.
+
+At the University of Manchester for example it would be the Computational Shared Facility, short csf.
+
+----------------------------------------------------------------------------------------------
+
+The 5 main steps:
+
+/SampleFolders
+
+----------------------------------------------------------------------------------------------
+
+/1. GBPopulation
+
+The grain boudaries found in the inputfiles were populated with phosphorus atoms using a Grand Canonical Monte Carlo simulation.
+
+/S41
+- grand_canonical.py, runs the GCMC simulation using lammps ,for N time steps dumping an image of the cell every D time steps
+- Fe-P.eam.fs, interatomic potential, http://www.ctcms.nist.gov/potentials/Fe-P.html
+- lammps_in.txt, contains all atom information (position, type) of the S41 grain boundary
+- in.base, lammps input file, read by the python script
+- S41-Twist.qsub, used to add it to the CSF queue, alternatively line 9 (sample usage) could be run in the terminal (makes no sense to run it locally, as it takes weeks to populate a cell)
+
+----------------------------------------------------------------------------------------------
 
 2. BuildingSupercells
 
-3. CascadeSimulation
+Before simulation cascade could be run, bigger computational cells were needed. Again the S41 is used as example.
+
+/S41-Twist_4x4
+- create_supercell_v2.py, takes all the other files in the folder and builds a supercell. The supercell parameter (line 33: sc_par = 4) defines how big the cell will be.
+It takes an amount of sc_par x sc_par GB files as input.
+- csl_black.txt
+- csl_white.txt
+- dump/dump_unmin.txt
+- dump/dump*.txt; 4 prepopulated dump files if 2x2 supercell, 16 if 4x4
+
+|								|					|								|
+|		csl_black		|		GB 		|		csl_white 	|
+|								|		4x4		|								|
+
+----------------------------------------------------------------------------------------------
+
+/3. CascadeSimulation
+
+This folder does not contain directly an input folder for a cascade simulation, it first has to be created by running one of the bash scripts:
+
+/RoundX
+bash createCascInput.sh, creates 15 different cascade folders at ones
+or
+bash createCascInputEnergy.sh, creates 18 different cascade folders at ones
+
+Take those scripts as example how to use bash scripts to generate a whole folder structure using one terminal command. It will safe you a lot of time.
+
+A typical cascade folder looks like following:
+
+/S41A
+- S41A.qsub, to submit it to the queue, because no python script is used, the simulations are run in parallel
+- in.simS41A, lammps input file, contains all lammps commands
+- Fe_2.eam.fs and Fe-P.eam.fs, interatomic potentials, combinded because the Fe-P.eam.fs doesn't support short atomic distances
+- lammps_sc.txt, atom data of the supercell
+
+----------------------------------------------------------------------------------------------
 
 4. RecoveryProcess
 
-5. DataAnalysis
+After the cascade a short and a long timescale segregation process were planned. The canonical.py has a bug and should be modified before usage.
+Again same principle as with the cascade simulations, the bash script has to be run to create csf input folders.
+
+Sample csf input folder:
+
+- canonical.py, runs the CMC simulation, be careful few P atoms change their type to Fe during the simulation, boundary condition should be improved
+- Fe-P.eam.fs, interatomic potential
+- in.base
+- in.smallcell
+- lammmps_in.txt
+_ S41A_CMC.qsub
 
 
 ----------------------------------------------------------------------------------------------
 
-Below several scripts are explained in more details. If you would like to have additonal information, feel free to write me an email.
+5. DataAnalysis
+Running the bash scripts, the input file are analysed and a file containing
+'Name mean standard_deviation m3 m4 skewness kurtosis'
+of the grain boundaries using the x-coordinate of the P atoms will be created.
+The total numbe of P atoms is printed as well.
+
+----------------------------------------------------------------------------------------------
+
+Below the other scripts are explained in more details. If you would like to have additonal information, feel free to write me an email.
+
+/OtherScripts
 
 ----------------------------------------------------------------------------------------------
 
