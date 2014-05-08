@@ -123,9 +123,11 @@ _ S41A_CMC.qsub
 5. DataAnalysis
 
 Running the bash scripts, the input file are analysed and a file containing
+
 'Name mean standard_deviation m3 m4 skewness kurtosis'
+
 of the grain boundaries using the x-coordinate of the P atoms will be created.
-The total numbe of P atoms is printed as well.
+In addition, the total number of P atoms is printed.
 
 ----------------------------------------------------------------------------------------------
 
