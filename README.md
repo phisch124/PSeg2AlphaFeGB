@@ -77,11 +77,8 @@ It takes an amount of sc_par x sc_par GB files as input.
 - dump/dump_unmin.txt
 - dump/dump*.txt; 4 prepopulated dump files if 2x2 supercell, 16 if 4x4
 
-|								|					|								|
 
-|		csl_black		|		GB 		|		csl_white 	|
-
-|								|		4x4		|								|
+|		csl_black		|		GB 4x4		|		csl_white 	|
 
 ----------------------------------------------------------------------------------------------
 
