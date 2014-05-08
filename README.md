@@ -103,7 +103,7 @@ A typical cascade folder looks like following:
 
 ----------------------------------------------------------------------------------------------
 
-4. RecoveryProcess
+/4. RecoveryProcess
 
 After the cascade a short and a long timescale segregation process were planned. The canonical.py has a bug and should be modified before usage.
 Again same principle as with the cascade simulations, the bash script has to be run to create csf input folders.
@@ -115,12 +115,12 @@ Sample csf input folder:
 - in.base
 - in.smallcell
 - lammmps_in.txt
-_ S41A_CMC.qsub
+- S41A_CMC.qsub
 
 
 ----------------------------------------------------------------------------------------------
 
-5. DataAnalysis
+/5. DataAnalysis
 
 Running the bash scripts, the input file are analysed and a file containing
 
