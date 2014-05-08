@@ -65,7 +65,7 @@ The grain boudaries found in the inputfiles were populated with phosphorus atoms
 
 ----------------------------------------------------------------------------------------------
 
-2. BuildingSupercells
+/2. BuildingSupercells
 
 Before simulation cascade could be run, bigger computational cells were needed. Again the S41 is used as example.
 
